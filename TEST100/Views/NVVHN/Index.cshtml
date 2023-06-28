@@ -1,0 +1,47 @@
+@model IEnumerable<TEST100.Models.NVVHN>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>NVVHN</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NVVBN)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NGo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sonha)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NVVBN.Quequan)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NGo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sonha)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Quequan">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Quequan">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Quequan">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
